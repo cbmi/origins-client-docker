@@ -15,7 +15,7 @@ docker run -d -p 8080:80 bruth/origins-client
 Change the Origins endpoint (necessary for boot2docker users):
 
 ```
-docker run -d -p 8080:80 -e ORIGINS_HOST="http://dockerhost:5000" bruth/origins-client
+docker run -d -p 8080:80 -e ORIGINS_ENDPOINT="http://dockerhost:5000" bruth/origins-client
 ```
 
 Use a local or custom build of the client:
