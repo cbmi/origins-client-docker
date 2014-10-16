@@ -6,6 +6,11 @@ server {
 
     root /usr/share/nginx/html;
 
+    # Hide hidden files
+    location ~ /\. {
+        deny all;
+    }
+
     # SPA convention; serve the file if it exists, otherwise
     # fallback to the index.
     location / {

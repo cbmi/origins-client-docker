@@ -7,12 +7,14 @@ RUN curl -OLs https://github.com/cbmi/origins-client/releases/download/untagged-
 RUN tar zxf /origins.tar.gz 2> /dev/null
 RUN cp -r /origins/* /usr/share/nginx/html
 
-ADD start.sh /
-RUN chmod +x /start.sh
+ADD entrypoint.sh /
+RUN chmod +x /entrypoint.sh
 
 # Add custom nginx config to accomodate SPA
 ADD nginx.conf /etc/nginx.conf
 ADD mime.types /etc/nginx/
 ADD default /etc/nginx/sites-enabled/default
 
-CMD ["/start.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
+
+CMD ["nginx"]
