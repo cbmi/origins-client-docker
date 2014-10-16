@@ -11,9 +11,10 @@ ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 
 # Add custom nginx config to accomodate SPA
-ADD nginx.conf /etc/nginx.conf
+ADD nginx.conf /etc/nginx/
 ADD mime.types /etc/nginx/
 ADD default /etc/nginx/sites-enabled/default
+RUN mkdir -p /usr/share/nginx/logs
 
 ENTRYPOINT ["/entrypoint.sh"]
 
