@@ -9,17 +9,17 @@ The nginx configuration comes from the [HTML5 Boilerplate server configs](https:
 By default it assumes the Origins endpoint is accessible by users at `http://localhost:5000`.
 
 ```
-docker run -d -p 8080:80 bruth/origins-client
+docker run -d -p 8080:80 dbhi/origins-client
 ```
 
 Change the Origins endpoint (necessary for boot2docker users):
 
 ```
-docker run -d -p 8080:80 -e ORIGINS_ENDPOINT="http://dockerhost:5000" bruth/origins-client
+docker run -d -p 8080:80 -e ORIGINS_ENDPOINT="http://dockerhost:5000" dbhi/origins-client
 ```
 
 Use a local or custom build of the client:
 
 ```
-docker run -d -p 8080:80 -v /path/to/files:/usr/share/nginx/html bruth/origins-client
+docker run -d -p 8080:80 -v /path/to/files:/usr/share/nginx/html dbhi/origins-client
 ```
