@@ -3,7 +3,7 @@ FROM dockerfile/nginx
 WORKDIR /
 
 # Download latest stable version of Origins
-RUN curl -OLs https://github.com/cbmi/origins-client/releases/download/0.1.0-beta4/origins.tar.gz
+RUN curl -OLs https://github.com/cbmi/origins-client/releases/download/0.1.0-beta5/origins.tar.gz
 RUN tar zxf /origins.tar.gz 2> /dev/null
 RUN cp -r /origins/* /usr/share/nginx/html
 
